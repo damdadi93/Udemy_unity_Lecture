@@ -15,13 +15,21 @@ public class Player : MonoBehaviour
     public float step = 0.5f;
     public float scale = 1;
     public float targetScale = 2f;
+
+    
+
+    public float maxHp = 100;
+
+
+    public Material[] MColor;
     
    
     public Rigidbody rb;
     TextMesh scoreOutput;
     int score = 0;
+    [SerializeField]
+    float currentHp = 0;
 
-   
 
     void Start()
     {
@@ -29,6 +37,9 @@ public class Player : MonoBehaviour
             //이름으로 게임 오브젝트를 찾고, 그중 TextMesh컴포너트를 얻기
     
         rb = GetComponent<Rigidbody>();
+
+        currentHp = maxHp;
+        MColor[0].color = Color.green;
     }
 
     
@@ -56,7 +67,7 @@ public class Player : MonoBehaviour
 
         transform.localScale -= new Vector3(0, scale * Time.deltaTime, 0);
     
-
+        
 
 
         //if (transform.position.y <= 0f)
@@ -74,8 +85,15 @@ public class Player : MonoBehaviour
     //SceneManager needs a namespace "UnityEngine.SceneManagement"
     private void OnCollisionEnter(Collision collision) //collision은 박스콜라이더컴포넌트에서 
     {
-        //GetActiveScene() 문자열 타입이 들어가야한다.
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        currentHp -= 35;
+        
+
+        if (currentHp <= 0)
+        {
+            //GetActiveScene() 문자열 타입이 들어가야한다.
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+       
     }
 
     //점수더하기
