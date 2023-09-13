@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         currentHp = maxHp;
-        MColor[0].color = Color.green;
+        //MColor[0].color = Color.green;
     }
 
     
