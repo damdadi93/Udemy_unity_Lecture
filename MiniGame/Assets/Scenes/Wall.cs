@@ -17,4 +17,6 @@ public class Wall : MonoBehaviour //MonoBehaviour is unity basic function.
         transform.Translate(speed * Time.deltaTime, 0, 0);
 
     }
+
+   
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -18,6 +19,13 @@ public class Player : MonoBehaviour
     {
         if(Input.GetButtonDown("Jump"))
             GetComponent<Rigidbody>().velocity = new Vector3(0, jumpPower, 0);
+    }
+
+    //SceneManager needs a namespace "UnityEngine.SceneManagement"
+    private void OnCollisionEnter(Collision collision) //collision은 박스콜라이더컴포넌트에서 
+    {
+        //GetActiveScene() 문자열 타입이 들어가야한다.
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }
