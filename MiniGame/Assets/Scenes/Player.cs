@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float jumpPower = 5;
+    //physical power add
+    //"float" is 실수 자료형(data tyPe)
+    public float jumpPower = 5f;
 
     void Start()
     {
@@ -17,4 +19,5 @@ public class Player : MonoBehaviour
         if(Input.GetButtonDown("Jump"))
             GetComponent<Rigidbody>().velocity = new Vector3(0, jumpPower, 0);
     }
+
 }
