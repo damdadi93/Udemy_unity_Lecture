@@ -713,6 +713,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpPower: 5
+  jumpBoost: 2.5
+  lowWarn: -4
+  speed: 1
+  step: 0.5
+  scale: 1
+  targetScale: 5
+  rb: {fileID: 0}
 --- !u!1 &2009323096
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,21 +7,68 @@ public class Player : MonoBehaviour
 {
     //physical power add
     //"float" is 실수 자료형(data tyPe)
+    
     public float jumpPower = 5f;
+    public float jumpBoost = 2.5f;
+    public float lowWarn = -4;
+    public float speed = 1;
+    public float step = 0.5f;
+    public float scale = 1;
+    public float targetScale = 2f;
+    
+   
+    public Rigidbody rb;
     TextMesh scoreOutput;
     int score = 0;
+
+   
 
     void Start()
     {
         scoreOutput = GameObject.Find(name: "Score").GetComponent<TextMesh>();
             //이름으로 게임 오브젝트를 찾고, 그중 TextMesh컴포너트를 얻기
+    
+        rb = GetComponent<Rigidbody>();
     }
 
     
     void Update()
     {
         if(Input.GetButtonDown("Jump"))
-            GetComponent<Rigidbody>().velocity = new Vector3(0, jumpPower, 0);
+        {
+            if(transform.position.y < lowWarn)
+            {
+                GetComponent<Rigidbody>().velocity = new Vector3(0, jumpPower * jumpBoost, 0);
+            }
+            else
+            {
+                GetComponent<Rigidbody>().velocity = new Vector3(0, jumpPower, 0);
+            }
+          
+        }
+
+        //transform.Translate(speed * Time.deltaTime,0,0);
+        // transform.position+= new Vector3(step * Time.deltaTime, 0, 0);
+
+        transform.localScale += new Vector3(0, scale * Time.deltaTime, 0);
+
+
+
+        transform.localScale -= new Vector3(0, scale * Time.deltaTime, 0);
+    
+
+
+
+        //if (transform.position.y <= 0f)
+        //{
+        //    //rb.AddForce()
+        //       // Impulse(transform.up * jumpPower * Time.deltaTime);
+        //}
+        //jumpPower = 5f;
+
+
+
+
     }
 
     //SceneManager needs a namespace "UnityEngine.SceneManagement"

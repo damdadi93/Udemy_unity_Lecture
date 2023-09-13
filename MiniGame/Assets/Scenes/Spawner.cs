@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject wallPrefab;
+    //public GameObject movePrefab;
     public float interval = 1.5f; //일정 시간마다
     public float range = 3f;
     float term;
