@@ -20,7 +20,11 @@ public class Spawner : MonoBehaviour
         term += Time.deltaTime;
         if(term >= interval) //일정 시간이 지나면
         {
-            Instantiate(wallPrefab, transform.position
+            Vector3 pos = transform.position;
+            pos.y += Random.Range(-range, range); //Range 랜덤 함수
+
+            //프리팹 자동생성함수 
+            Instantiate(wallPrefab, pos//transform.position //pos로 받는다.
                                     ,transform.rotation);
             term -= interval;
 
