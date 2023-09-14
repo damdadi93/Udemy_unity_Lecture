@@ -463,7 +463,9 @@ MonoBehaviour:
   - {fileID: 426547062330174471, guid: 2c7fbd368cbb6954d9ac16ebc16743cb, type: 3}
   - {fileID: 55712725154853320, guid: 09e28ec00c77d3a48b8930106cdccdcf, type: 3}
   dropPrefab: {fileID: 1978486730649619081, guid: ecd92fbac2f33884fa46de1160a43aa1, type: 3}
+  backGroundPrefab: {fileID: 7814712204866743025, guid: 10e1ac7e23db9d64cb3ba4f83047773b, type: 3}
   interval: 1.5
+  backGroundTime: 3
   range: 3
 --- !u!1 &1565888306
 GameObject:
@@ -663,7 +665,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4195566aa3f152c45a30da947f66ec90, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -733,7 +735,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1781897334
 MonoBehaviour:
@@ -754,9 +756,14 @@ MonoBehaviour:
   step: 0.5
   scale: 1
   targetScale: 5
+  isHit: 0
+  time: 2
+  damage: 35
   maxHp: 100
-  MColor: []
+  MColor: {fileID: 0}
+  Mesh: {fileID: 0}
   rb: {fileID: 0}
+  BC: {fileID: 0}
   currentHp: 0
 --- !u!1 &2009323096
 GameObject:

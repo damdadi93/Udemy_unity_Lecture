@@ -1,3 +1,4 @@
+using OpenCover.Framework.Model;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +7,16 @@ public class Spawner : MonoBehaviour
 {
     public GameObject[] wallPrefab;
     public GameObject dropPrefab;
+
+    public GameObject backGroundPrefab;
+
     public float interval = 1.5f; //일정 시간마다
+    //배경
+    public float backGroundTime = 2f;
     public float range = 3f;
     float term;
+    //배경
+    float backGroundTerm;
 
     void Start()
     {
@@ -19,6 +27,7 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         term += Time.deltaTime;
+        backGroundTerm += Time.deltaTime;
         if(term >= interval) //일정 시간이 지나면
         {
             Vector3 pos = transform.position;
@@ -32,9 +41,21 @@ public class Spawner : MonoBehaviour
             if (Random.Range(0, 2) == 0) //50%의 확률로
                 Instantiate(dropPrefab); // 떨어지는 장애물 생성
             
+
             term -= interval;
 
+
         }
-        
+
+        //배경
+        if (backGroundTerm >= backGroundTime)
+        {
+            
+            Instantiate(backGroundPrefab, backGroundPrefab.transform.position, backGroundPrefab.transform.rotation);
+
+            backGroundTerm %= backGroundTime;
+        }
+            
+
     }
 }
