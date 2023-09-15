@@ -7,8 +7,9 @@ public class Spawner : MonoBehaviour
 {
     public GameObject[] wallPrefab;
     public GameObject dropPrefab;
+    
 
-    public GameObject backGroundPrefab;
+    //public GameObject backGroundPrefab;
 
     public float interval = 1.5f; //일정 시간마다
     //배경
@@ -27,7 +28,7 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         term += Time.deltaTime;
-        backGroundTerm += Time.deltaTime;
+       // backGroundTerm += Time.deltaTime;
         if(term >= interval) //일정 시간이 지나면
         {
             Vector3 pos = transform.position;
@@ -46,16 +47,7 @@ public class Spawner : MonoBehaviour
 
 
         }
-
-        //배경
-        if (backGroundTerm >= backGroundTime)
-        {
-            
-            Instantiate(backGroundPrefab, backGroundPrefab.transform.position, backGroundPrefab.transform.rotation);
-
-            backGroundTerm %= backGroundTime;
-        }
-            
+        
 
     }
 }

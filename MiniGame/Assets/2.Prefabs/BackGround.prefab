@@ -114,7 +114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4261916831119587192}
-  - component: {fileID: 3213481947398924142}
+  - component: {fileID: -5331391600559245168}
   m_Layer: 0
   m_Name: BackGround
   m_TagString: Untagged
@@ -132,13 +132,13 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.38150835, y: -3.187356, z: 6.830986}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 4.8, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6124318166014136572}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3213481947398924142
+--- !u!114 &-5331391600559245168
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,8 +147,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7814712204866743025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5008a15e97fe1f4690f62921b7b372b, type: 3}
+  m_Script: {fileID: 11500000, guid: fde32a646ddaae14bb4b3069adf425eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -5
-  background: {fileID: 7814712204866743025}
+  interval: 10
+  back: {fileID: 0}
