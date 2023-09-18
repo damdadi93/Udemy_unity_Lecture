@@ -15,7 +15,7 @@ public class BackGroundSpawn : MonoBehaviour
         term = interval;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         term += Time.deltaTime;

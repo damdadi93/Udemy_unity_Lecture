@@ -27,9 +27,10 @@ public class Player : MonoBehaviour
     public MeshRenderer Mesh;
     public Rigidbody rb;
     public BoxCollider BC;
-    
-   
-    
+    public CapsuleCollider CC;
+
+
+
 
     Renderer playerColor;
 
@@ -46,6 +47,7 @@ public class Player : MonoBehaviour
     
         rb = GetComponent<Rigidbody>();
         BC = GetComponent<BoxCollider>();
+        CC = GetComponent<CapsuleCollider>();
         playerColor = gameObject.GetComponent<Renderer>(); //겟컴포넌트는 한번만...해야하는데
         //MColor = playerColor.material;
         currentHp = maxHp;
